@@ -1,0 +1,33 @@
+Insert
+1. Start
+2. Details of property are entered through the frontend
+3. Check if property already present
+    A) if yes show "Property already present", go to step 6
+    B) else go to step 4
+4. Location in the hash table database is found using the hash function
+5. Check bucket size exceds 3
+    A) if yes "Limit Overflow" is displayed
+    B) else record is inserted in BData.txt
+6. Stop
+
+Delete
+1. Start
+2. Admin enters property id of the record to be deleted through frontend
+3. Check if property is present
+    A) if yes go to step 4
+    B) else show "Property not found" go to step 6
+4. Check if the property is borrowed by any customer
+    A) if yes show "Property is borrowed by some customer" go to step 6
+    B) else go to step 5
+5. Property record is deleted from the hash table(BData.txt) and space is made available for reuse
+6. Stop
+
+Search
+1. Start
+2. User enters property id of the record to be searched through frontend
+3. Load property record details from Bindex.txt in sorted order
+4. Search property using binary search algorithm
+    A) if found return record position in hash table to step 5
+    B) else show "Property not found" and go to step 6
+5. Display Property details using hash table(BData.txt)
+6. Stop
